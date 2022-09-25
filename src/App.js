@@ -1,14 +1,13 @@
 import './App.css';
 import Anime from './component/anime';
-// import Anime1 from './component/anime1';
-
+import Header from "./component/header";
 
 function App() {
 
   return (
     <div>
+      <Header/>
         <Anime/> 
-        {/* <Anime1/> */}
     </div>
   );
 }

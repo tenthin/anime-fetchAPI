@@ -1,6 +1,7 @@
 import React from 'react'
-import { useState ,useEffect} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function FetchAnime() {
 
@@ -16,20 +17,33 @@ function FetchAnime() {
   return(
     <div>
 
-    <button onClick={fetchAnime}>Fetch Anime</button>
-    <div>
-    {
-        anime.map((value) => {
-          return(
-            <div>
-              <img src={value.images.jpg.image_url} alt="anime"/>
-            <h5 className="title">{value.title}</h5>
-            <p className="synopsis">{value.synopsis}</p>
-            <button><a href={value.url} className="url">Click</a></button>
-            </div>
-          )
-        })
-      }
+      <div className="container my-3">
+        <div className="row">
+          <div className="col-4">
+          <button onClick={fetchAnime} className="btn btn-primary">Fetch Anime</button>
+          </div>
+        </div>
+      </div>
+
+    <div className="container my-3">
+      <div className="row">
+        {
+          anime.map((value) => {
+            return(
+              <div className="col-4">
+                <div className="card" style={{width:"18rem"}}>
+                  <img src={value.images.jpg.image_url} alt="anime"/>
+                  <div className="card-body">  
+                    <h5 className="title">{value.title}</h5>
+                    <p className="synopsis">{value.synopsis}</p>
+                    <button><a href={value.url} className="url">Click</a></button>
+                  </div>
+                </div>
+              </div>
+            )
+          })
+          }
+      </div>
     </div>
    
     </div>
@@ -37,6 +51,36 @@ function FetchAnime() {
 }
 
 export default FetchAnime
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
